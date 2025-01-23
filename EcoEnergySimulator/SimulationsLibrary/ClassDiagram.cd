@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimulationsLibrary.EnergySystem">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnergySystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimulationsLibrary.SolarSystem">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAE=</HashCode>
+      <FileName>SolarSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimulationsLibrary.WindSystem">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>WindSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimulationsLibrary.HydroelectricSystem">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HydroelectricSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SimulationsLibrary.IEnergyCalculation">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEnergyCalculation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
