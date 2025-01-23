@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimulationsLibrary
 {
-    public class SolarSystem: EnergySystem
+    public class SolarSystem: EnergySystem, IEnergyCalculation
     {
         private float sunHours;
 

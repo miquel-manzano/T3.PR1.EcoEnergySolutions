@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimulationsLibrary
 {
-    public class HydroelectricSystem: EnergySystem
+    public class HydroelectricSystem: EnergySystem, IEnergyCalculation
     {
         private float waterFlow;
 

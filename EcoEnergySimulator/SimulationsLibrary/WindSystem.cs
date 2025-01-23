@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimulationsLibrary
 {
-    public class WindSystem: EnergySystem
+    public class WindSystem: EnergySystem, IEnergyCalculation
     {
         private float windSpeed;
 
