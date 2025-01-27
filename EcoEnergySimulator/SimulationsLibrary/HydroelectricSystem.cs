@@ -7,10 +7,10 @@ namespace SimulationsLibrary
 {
     public class HydroelectricSystem: EnergySystem, IEnergyCalculation
     {
-        private float waterFlow;
+        private double waterFlow;
 
-        public float GetWaterFlow() { return this.waterFlow; }
-        public void SetWaterFlow(float waterFlow) { this.waterFlow = waterFlow; }
+        public double GetWaterFlow() { return this.waterFlow; }
+        public void SetWaterFlow(double waterFlow) { this.waterFlow = waterFlow; }
 
     }
 }

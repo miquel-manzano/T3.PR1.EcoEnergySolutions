@@ -7,10 +7,10 @@ namespace SimulationsLibrary
 {
     public class WindSystem: EnergySystem, IEnergyCalculation
     {
-        private float windSpeed;
+        private double windSpeed;
 
-        public float GetWindSpeed() { return this.windSpeed; }
-        public void SetWindSpeed(float windSpeed) { this.windSpeed = windSpeed; }
+        public double GetWindSpeed() { return this.windSpeed; }
+        public void SetWindSpeed(double windSpeed) { this.windSpeed = windSpeed; }
 
     }
 }

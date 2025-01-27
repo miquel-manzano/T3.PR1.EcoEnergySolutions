@@ -7,10 +7,10 @@ namespace SimulationsLibrary
 {
     public class SolarSystem: EnergySystem, IEnergyCalculation
     {
-        private float sunHours;
+        private double sunHours;
 
-        public float GetSunHours() { return this.sunHours; }
+        public double GetSunHours() { return this.sunHours; }
 
-        public void SetSunHours(float sunHours) { this.sunHours = sunHours; }
+        public void SetSunHours(double sunHours) { this.sunHours = sunHours; }
     }
 }
