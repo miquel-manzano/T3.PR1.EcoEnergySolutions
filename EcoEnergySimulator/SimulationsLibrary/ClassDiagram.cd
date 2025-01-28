@@ -3,9 +3,10 @@
   <Class Name="SimulationsLibrary.EnergySystem">
     <Position X="6.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAgAAAAAAAAA=</HashCode>
       <FileName>EnergySystem.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SimulationsLibrary.SolarSystem">
     <Position X="4.25" Y="2.5" Width="1.5" />
@@ -32,7 +33,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SimulationsLibrary.IEnergyCalculation">
-    <Position X="11.5" Y="2.75" Width="1.5" />
+    <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IEnergyCalculation.cs</FileName>

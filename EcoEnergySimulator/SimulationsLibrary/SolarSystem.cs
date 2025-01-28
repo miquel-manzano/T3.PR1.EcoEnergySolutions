@@ -7,10 +7,19 @@ namespace SimulationsLibrary
 {
     public class SolarSystem: EnergySystem, IEnergyCalculation
     {
-        private float sunHours;
+        private double SunHours;
 
-        public float GetSunHours() { return this.sunHours; }
+        public SolarSystem() : base("Solar") { }
 
-        public void SetSunHours(float sunHours) { this.sunHours = sunHours; }
+        public override void SetParameters()
+        {
+            Console.Write("Introdueix les hores de sol disponibles (> 1): ");
+            SunHours = UserInteractionHelper.UserDoubleInput(1);//user library
+        }
+
+        public override double CalculateEnergy()
+        {
+            return SunHours * 1.5;
+        }
     }
 }

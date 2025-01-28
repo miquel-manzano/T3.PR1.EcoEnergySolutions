@@ -7,10 +7,20 @@ namespace SimulationsLibrary
 {
     public class HydroelectricSystem: EnergySystem, IEnergyCalculation
     {
-        private float waterFlow;
+        private double waterFlow;
 
-        public float GetWaterFlow() { return this.waterFlow; }
-        public void SetWaterFlow(float waterFlow) { this.waterFlow = waterFlow; }
+        public HydroelectricSystem() : base("Hidroelèctric") { }
+
+        public override void SetParameters()
+        {
+            Console.Write("Introdueix el cabal de l’aigua (> 20 m3): ");
+            waterFlow = UserInteractionHelper.UserDoubleInput(20);
+        }
+
+        public override double CalculateEnergy()
+        {
+            return waterFlow * 9.8 * 0.8;
+        }
 
     }
 }

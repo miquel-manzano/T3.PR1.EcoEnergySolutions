@@ -7,10 +7,20 @@ namespace SimulationsLibrary
 {
     public class WindSystem: EnergySystem, IEnergyCalculation
     {
-        private float windSpeed;
+        private double windSpeed;
 
-        public float GetWindSpeed() { return this.windSpeed; }
-        public void SetWindSpeed(float windSpeed) { this.windSpeed = windSpeed; }
+        public WindSystem() : base("Eòlic") { }
+
+        public override void SetParameters()
+        {
+            Console.Write("Introdueix la velocitat del vent (> 5 m/s): ");
+            windSpeed = UserInteractionHelper.UserDoubleInput(5);
+        }
+
+        public override double CalculateEnergy()
+        {
+            return Math.Pow(windSpeed, 3) * 0.2;
+        }
 
     }
 }
