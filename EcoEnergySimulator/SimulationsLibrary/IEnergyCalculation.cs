@@ -7,5 +7,7 @@ namespace SimulationsLibrary
 {
     public interface IEnergyCalculation
     {
+        void SetParameters();
+        double CalculateEnergy();
     }
 }

@@ -9,8 +9,18 @@ namespace SimulationsLibrary
     {
         private double waterFlow;
 
-        public double GetWaterFlow() { return this.waterFlow; }
-        public void SetWaterFlow(double waterFlow) { this.waterFlow = waterFlow; }
+        public HydroelectricSystem() : base("Hidroelèctric") { }
+
+        public override void SetParameters()
+        {
+            Console.Write("Introdueix el cabal de l’aigua (> 20 m3): ");
+            waterFlow = UserInteractionHelper.UserDoubleInput(20);
+        }
+
+        public override double CalculateEnergy()
+        {
+            return waterFlow * 9.8 * 0.8;
+        }
 
     }
 }

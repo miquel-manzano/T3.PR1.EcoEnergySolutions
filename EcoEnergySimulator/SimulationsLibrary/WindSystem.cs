@@ -9,8 +9,18 @@ namespace SimulationsLibrary
     {
         private double windSpeed;
 
-        public double GetWindSpeed() { return this.windSpeed; }
-        public void SetWindSpeed(double windSpeed) { this.windSpeed = windSpeed; }
+        public WindSystem() : base("Eòlic") { }
+
+        public override void SetParameters()
+        {
+            Console.Write("Introdueix la velocitat del vent (> 5 m/s): ");
+            windSpeed = UserInteractionHelper.UserDoubleInput(5);
+        }
+
+        public override double CalculateEnergy()
+        {
+            return Math.Pow(windSpeed, 3) * 0.2;
+        }
 
     }
 }
