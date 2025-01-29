@@ -6,11 +6,12 @@ internal class Program
     public static int CurrentSimulation; // Simulacion actual
 
     /// <summary>
-    /// My metodo es muy bonito.
+    /// Initial menu of the program.
     /// </summary>
     /// <param name="args">numeros</param>
     private static void Main(string[] args)
     {
+        const string MsgInvalidOption = "Opcio Erronea";
         // Pantalla inicial
         PrintTitle();
         int? opcio = null;
@@ -18,7 +19,7 @@ internal class Program
         while (!validOption)
         {
             PrintInitialMenu();
-            opcio = UserInteractionHelper.UserIntInput(2);
+            opcio = UserInteractionHelper.UserIntInput();
             switch (opcio)
             {
                 case 0:
@@ -31,13 +32,17 @@ internal class Program
                     validOption = true;
                     break;
                 default:
-                    Console.WriteLine("Opcio Erronea");
+                    Console.Clear();
+                    Console.WriteLine(MsgInvalidOption);
                     validOption = false;
                     break;
             }
         }
     }
 
+    /// <summary>
+    /// Menu on esculls the simulation to fer i configuration.
+    /// </summary>
     public static void SimulationScreen()
     {
         Console.Clear();
@@ -51,6 +56,9 @@ internal class Program
         {
             return;
         }
+
+        const string MsgInvalidOption = "Opcio Erronea";
+        const string MsgCompletedSimulation = "Simulació completada i guardada.";
 
         int? opcio = null;
         bool validOption = false;
@@ -77,6 +85,8 @@ internal class Program
                     simulation = new HydroelectricSystem();
                     break;
                 default:
+                    Console.Clear();
+                    Console.WriteLine(MsgInvalidOption);
                     validOption = false;
                     break;
             }
@@ -85,10 +95,13 @@ internal class Program
         SimulationsArray[CurrentSimulation] = simulation;
         CurrentSimulation++;
         Console.Clear();
-        Console.WriteLine("Simulació completada i guardada.");
+        Console.WriteLine(MsgCompletedSimulation);
         return;
     }
 
+    /// <summary>
+    /// Function that shows the report of the simulations carried out.
+    /// </summary>
     public static void ShowReport()
     {
         Console.WriteLine("\nInforme de Simulacions:");
@@ -100,6 +113,10 @@ internal class Program
         return;
     }
 
+
+    /// <summary>
+    /// Functions that print important menus/texts.
+    /// </summary>
     public static void PrintInitialMenu()
     {
         Console.WriteLine("Choose an option:\n0 - Start simulation\n1 - Show Report\n2 - Exit");
