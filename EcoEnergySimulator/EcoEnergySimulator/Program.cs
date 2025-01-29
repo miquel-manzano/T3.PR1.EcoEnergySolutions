@@ -12,17 +12,17 @@ internal class Program
     private static void Main(string[] args)
     {
         // Pantalla inicial
-        Console.WriteLine("Welcomeeee!!");
+        PrintTitle();
         int? opcio = null;
         bool validOption = false;
         while (!validOption)
         {
-            Console.WriteLine("Menu inicial");
+            PrintInitialMenu();
             opcio = UserInteractionHelper.UserIntInput(2);
             switch (opcio)
             {
                 case 0:
-                    SimulationsScreen();
+                    SimulationScreen();
                     break;
                 case 1:
                     ShowReport();
@@ -38,8 +38,9 @@ internal class Program
         }
     }
 
-    public static void SimulationsScreen()
+    public static void SimulationScreen()
     {
+        Console.Clear();
         if (SimulationsArray == null)
         {
             Console.WriteLine();
@@ -51,37 +52,39 @@ internal class Program
             return;
         }
 
-        int opcio = UserInteractionHelper.UserIntInput(2);
+        int? opcio = null;
         bool validOption = false;
 
-        EnergySystem simulacio = null;
+        EnergySystem? simulation = null;
 
         while (!validOption)
         {
+            PrintSimulationMenu();
+            opcio = UserInteractionHelper.UserIntInput();
             validOption = true;
             switch (opcio)
             {
                 case 0:
                     Console.WriteLine();
-                    simulacio = new SolarSystem();
+                    simulation = new SolarSystem();
                     break;
                 case 1:
                     Console.WriteLine();
-                    simulacio = new WindSystem();
+                    simulation = new WindSystem();
                     break;
                 case 2:
                     Console.WriteLine();
-                    simulacio = new HydroelectricSystem();
+                    simulation = new HydroelectricSystem();
                     break;
                 default:
                     validOption = false;
-                    opcio = UserInteractionHelper.UserIntInput(2);
                     break;
             }
         }
-        simulacio.SetParameters();
-        SimulationsArray[CurrentSimulation] = simulacio;
+        simulation.SetParameters();
+        SimulationsArray[CurrentSimulation] = simulation;
         CurrentSimulation++;
+        Console.Clear();
         Console.WriteLine("Simulació completada i guardada.");
         return;
     }
@@ -95,5 +98,22 @@ internal class Program
             Console.WriteLine(SimulationsArray[i]);
         }
         return;
+    }
+
+    public static void PrintInitialMenu()
+    {
+        Console.WriteLine("Choose an option:\n0 - Start simulation\n1 - Show Report\n2 - Exit");
+    }
+
+    public static void PrintSimulationMenu()
+    {
+        Console.WriteLine("Choose a simulation:\n0 - Solar System\n1 - Wind System\n2 - Hydroelectric System");
+    }
+
+    public static void PrintTitle()
+    {
+        Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
+        Console.WriteLine("\r\n\r\n                                                                                                                \r\n _____         _____                        _____ _           _     _                     _____ _             _ \r\n|   __|___ ___|   __|___ ___ ___ ___ _ _   |   __|_|_____ _ _| |___| |_ ___ ___    ___   |     |_|___ _ _ ___| |\r\n|   __|  _| . |   __|   | -_|  _| . | | |  |__   | |     | | | | .'|  _| . |  _|  |___|  | | | | | . | | | -_| |\r\n|_____|___|___|_____|_|_|___|_| |_  |_  |  |_____|_|_|_|_|___|_|__,|_| |___|_|           |_|_|_|_|_  |___|___|_|\r\n                                |___|___|                                                          |_|          \r\n\r\n");
+        Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
     }
 }

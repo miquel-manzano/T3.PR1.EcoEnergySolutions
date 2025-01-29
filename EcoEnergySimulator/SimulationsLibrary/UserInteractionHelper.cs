@@ -11,14 +11,24 @@
                 try
                 {
                     userNumber = double.Parse(Console.ReadLine());
+                    if (userNumber < minValue)
+                    {
+                        throw new Exception();
+                    }
                     isValid = true;
                 }
                 catch
                 {
+                    Console.WriteLine("Invalid number");
                     isValid = false;
                 }
             } while (!isValid);
             return userNumber;
+        }
+
+        public static int UserIntInput()
+        {
+            return UserIntInput(0);
         }
 
         public static int UserIntInput(int minValue)
@@ -30,10 +40,15 @@
                 try
                 {
                     userNumber = int.Parse(Console.ReadLine());
+                    if (userNumber < minValue)
+                    {
+                        throw new Exception();
+                    }
                     isValid = true;
                 }
                 catch
                 {
+                    Console.WriteLine("Invalid number");
                     isValid = false;
                 }
             } while (!isValid);
